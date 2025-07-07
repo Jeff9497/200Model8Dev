@@ -21,9 +21,8 @@ An advanced AI chat interface with real-time web search capabilities and multipl
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-  https://github.com/Jeff9497/200Model8Dev
-
+   ```bash 
+    https://github.com/Jeff9497/200Model8Dev
    ```
 
 2. **Install dependencies**
