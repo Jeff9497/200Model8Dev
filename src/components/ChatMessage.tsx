@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { User, Brain, Zap, Cpu, Code, Copy, Check, ChevronDown, ChevronUp, Edit2, Save, X, Send } from 'lucide-react';
+import { Brain, Zap, Cpu, Code, Copy, Check, ChevronDown, ChevronUp, Edit2, Save, X, Send } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -235,12 +235,12 @@ export function ChatMessage({ message, onEdit, onResend }: ChatMessageProps) {
                       <div className="relative">
                         <SyntaxHighlighter
                           language={language}
-                          style={oneDark}
+                          style={oneDark as any}
                           customStyle={{
                             margin: 0,
                             borderRadius: '0.375rem',
                             fontSize: '0.875rem'
-                          }}
+                          } as React.CSSProperties}
                           {...props}
                         >
                           {String(children).replace(/\n$/, '')}

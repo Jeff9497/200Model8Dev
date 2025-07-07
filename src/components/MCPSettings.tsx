@@ -116,12 +116,24 @@ export function MCPSettings({ isOpen, onClose, permissions, onClearPermissions }
     if (!permission) return null;
     
     if (permission.alwaysAllow) {
-      return <CheckCircle className="w-4 h-4 text-green-500" title="Always Allowed" />;
+      return (
+        <div className="flex items-center" title="Always Allowed">
+          <CheckCircle className="w-4 h-4 text-green-500" />
+        </div>
+      );
     }
     if (permission.allowed) {
-      return <Shield className="w-4 h-4 text-blue-500" title="Allowed Once" />;
+      return (
+        <div className="flex items-center" title="Allowed Once">
+          <Shield className="w-4 h-4 text-blue-500" />
+        </div>
+      );
     }
-    return <XCircle className="w-4 h-4 text-red-500" title="Denied" />;
+    return (
+      <div className="flex items-center" title="Denied">
+        <XCircle className="w-4 h-4 text-red-500" />
+      </div>
+    );
   };
 
   return (
