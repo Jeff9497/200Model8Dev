@@ -1,5 +1,5 @@
 {
-  "name": "200model8dev",
+  "name": "model8-dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "15.3.5",
+    "lucide-react": "^0.263.1",
+    "react-markdown": "^8.0.7",
+    "react-syntax-highlighter": "^15.5.0",
+    "@types/react-syntax-highlighter": "^15.5.7"
   },
   "devDependencies": {
     "typescript": "^5",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
     "eslint": "^9",
