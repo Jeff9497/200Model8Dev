@@ -25,15 +25,65 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Mobile input area positioning fix */
+/* Mobile optimizations */
 @media (max-width: 768px) {
-  .mobile-input-fix {
-    padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
-    margin-bottom: 4rem; /* Push input area up by about 4cm total */
+  /* Ensure full height on mobile */
+  html, body {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
+    overflow: hidden;
   }
 
-  /* Add bottom padding to messages area so content isn't hidden */
-  .mobile-chat-container {
-    padding-bottom: 5rem;
+  /* Fix input area on mobile - move it up significantly */
+  .mobile-input-fix {
+    position: fixed;
+    bottom: 3rem; /* Move up 3cm (approximately) */
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    padding: 0.75rem;
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    z-index: 10;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   }
+
+  /* Dark mode input area */
+  .dark .mobile-input-fix {
+    background: #1f2937;
+    border-top-color: #374151;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Fix mobile viewport issues - add more bottom padding */
+  .mobile-chat-container {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom)) !important;
+    margin-bottom: 0;
+  }
+
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+
+  /* Better touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Ensure input is always visible */
+  .mobile-input-container {
+    position: relative;
+    z-index: 20;
+  }
+}
+
+/* Prevent horizontal scroll */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
 }

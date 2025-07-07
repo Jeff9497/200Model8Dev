@@ -75,15 +75,15 @@ export function ModelSelector({ models, selectedModel, onModelSelect, rateLimits
       {/* Dropdown Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors min-w-[200px]"
+        className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors min-w-[120px] sm:min-w-[200px] max-w-[160px] sm:max-w-none"
       >
-        <div className="flex items-center space-x-2 flex-1">
+        <div className="flex items-center space-x-1 sm:space-x-2 flex-1 min-w-0">
           {selectedModelData && getModelIcon(selectedModelData.id)}
-          <div className="text-left">
-            <div className="text-sm font-medium text-gray-900 dark:text-white truncate">
+          <div className="text-left min-w-0 flex-1">
+            <div className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white truncate">
               {selectedModelData?.name || 'Select Model'}
             </div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">
+            <div className="text-xs text-gray-500 dark:text-gray-400 truncate">
               {selectedModelData?.unlimited ? 'Unlimited' : rateLimitStatus ? `${rateLimitStatus.remaining} left` : ''}
             </div>
           </div>
@@ -93,7 +93,7 @@ export function ModelSelector({ models, selectedModel, onModelSelect, rateLimits
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
+        <div className="absolute top-full left-0 right-0 sm:left-0 sm:right-auto sm:w-80 mt-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
           {Object.entries(groupedModels).map(([category, categoryModels]) => (
             <div key={category} className="p-2">
               <div className="flex items-center space-x-2 px-2 py-1 mb-2">
